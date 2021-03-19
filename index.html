@@ -1,330 +1,173 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Alone's blog - Alone</title><meta name="keywords" content="分享并坚持"><meta name="author" content="Alone"><meta name="copyright" content="Alone"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="加油变秃">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alone&#39;s blog">
 <meta property="og:url" content="https://chen849343227.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="Alone&#39;s blog">
+<meta property="og:description" content="加油变秃">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen849343227.github.io/img/head.jpeg">
+<meta property="article:author" content="Alone">
+<meta property="article:tag" content="分享并坚持">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chen849343227.github.io/img/head.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chen849343227.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-03-19 10:43:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chen849343227.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?0a30f83071e88ef0a2d3be2e5b647282"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/head.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/home.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Alone's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Alone's blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/" title="Android音量调节（二）音量处理及UI刷新">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android音量调节（二）音量处理及UI刷新"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/" title="Android音量调节（二）音量处理及UI刷新">Android音量调节（二）音量处理及UI刷新</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-03T06:39:28.267Z" title="发表于 2020-08-03 14:39:28">2020-08-03</time></span></div><div class="content">
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/18/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-03-18T08:12:55.860Z" itemprop="datePublished">2021-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/18/hello-world/">Hello World</a>
-    </h1>
-  
+第一篇：Android音量调节（一）音量键的处理流程
+本来是想衔接第一篇直接去写AudioService.java里面通知音量改变之后SystemUI里面的处理，但是当本人去查看并分析源码的时候，慢慢的慢慢的就把SystemUI的启动过程给看完了，想了一下，于是决定先分析整个SystemUI的启动过程，然后再去衔接第一篇去分析音量条的处理过程。于是本篇博客内容分以下两大块：
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+SystemUI启动过程分析
+VolumeUI音量条处理分析
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+如果对第一个内容已经了解的同学可以直接去查看第二个内容
+2.SystemUI启动过程分析2.1 启动SystemUIServiceSystemUI是在frameworks/base/packages/SystemUI/路径下，以apk的形式预置到了系统中。
+SystemUI最开始是在SystemServer.java里面去启动的
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455// framew ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/head.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Alone</div><div class="author-info__description">加油变秃</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chen849343227"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">初建站，待完善</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/" title="Android音量调节（二）音量处理及UI刷新"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android音量调节（二）音量处理及UI刷新"/></a><div class="content"><a class="title" href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/" title="Android音量调节（二）音量处理及UI刷新">Android音量调节（二）音量处理及UI刷新</a><time datetime="2020-08-03T06:39:28.267Z" title="发表于 2020-08-03 14:39:28">2020-08-03</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-03-19T02:43:26.120Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Alone</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "加油变秃".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '加'
+  }
+}
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://chen849343227.github.io/2021/03/18/hello-world/" data-id="ckmenyp0r0000o5t37gl23jeq" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Android音量调节（二）音量处理及UI刷新" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/" class="article-date">
-  <time class="dt-published" datetime="2020-08-03T06:39:28.267Z" itemprop="datePublished">2020-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/">Android音量调节（二）音量处理及UI刷新</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>第一篇：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33668392/article/details/85265271">Android音量调节（一）音量键的处理流程</a></p>
-<p>本来是想衔接第一篇直接去写AudioService.java里面通知音量改变之后SystemUI里面的处理，但是当本人去查看并分析源码的时候，慢慢的慢慢的就把SystemUI的启动过程给看完了，想了一下，于是决定先分析整个SystemUI的启动过程，然后再去衔接第一篇去分析音量条的处理过程。于是本篇博客内容分以下两大块：</p>
-<ul>
-<li>SystemUI启动过程分析</li>
-<li>VolumeUI音量条处理分析</li>
-</ul>
-<p>如果对第一个内容已经了解的同学可以直接去查看第二个内容</p>
-<h2 id="2-SystemUI启动过程分析"><a href="#2-SystemUI启动过程分析" class="headerlink" title="2.SystemUI启动过程分析"></a>2.SystemUI启动过程分析</h2><h3 id="2-1-启动SystemUIService"><a href="#2-1-启动SystemUIService" class="headerlink" title="2.1 启动SystemUIService"></a>2.1 启动SystemUIService</h3><p>SystemUI是在<code>frameworks/base/packages/SystemUI/</code>路径下，以apk的形式预置到了系统中。</p>
-<p>SystemUI最开始是在SystemServer.java里面去启动的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/services/java/com/android/server/SystemServer.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemServer</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The main entry point from zygote.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> SystemServer().run();</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ......</span><br><span class="line">        <span class="comment">// Start services.</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            traceBeginAndSlog(<span class="string">&quot;StartServices&quot;</span>);</span><br><span class="line">            startBootstrapServices();</span><br><span class="line">            startCoreServices();</span><br><span class="line">            <span class="comment">// SystemUIService在这里面启动</span></span><br><span class="line">            startOtherServices();</span><br><span class="line">            SystemServerInitThreadPool.shutdown();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable ex) &#123;</span><br><span class="line">            Slog.e(<span class="string">&quot;System&quot;</span>, <span class="string">&quot;******************************************&quot;</span>);</span><br><span class="line">            Slog.e(<span class="string">&quot;System&quot;</span>, <span class="string">&quot;************ Failure starting system services&quot;</span>, ex);</span><br><span class="line">            <span class="keyword">throw</span> ex;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            traceEnd();</span><br><span class="line">        &#125;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startOtherServices</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        .......</span><br><span class="line">          </span><br><span class="line">        traceBeginAndSlog(<span class="string">&quot;StartSystemUI&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            startSystemUi(context, windowManager);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable e) &#123;</span><br><span class="line">            reportWtf(<span class="string">&quot;starting System UI&quot;</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        traceEnd();</span><br><span class="line">      </span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">startSystemUi</span><span class="params">(Context context, WindowManagerService windowManager)</span> </span>&#123;</span><br><span class="line">        Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">        intent.setComponent(<span class="keyword">new</span> ComponentName(<span class="string">&quot;com.android.systemui&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;com.android.systemui.SystemUIService&quot;</span>));</span><br><span class="line">        intent.addFlags(Intent.FLAG_DEBUG_TRIAGED_MISSING);</span><br><span class="line">        <span class="comment">//Slog.d(TAG, &quot;Starting service: &quot; + intent);</span></span><br><span class="line">        context.startServiceAsUser(intent, UserHandle.SYSTEM);</span><br><span class="line">        windowManager.onSystemUiStarted();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这边启动了com.android.systemui.SystemUIService这个service</p>
-<p>接下来说个题外话，启动service时，是service先运行，还是Application先运行呢？我们从代码中来分析</p>
-<h3 id="2-2-启动Service"><a href="#2-2-启动Service" class="headerlink" title="2.2 启动Service"></a>2.2 启动Service</h3><p>整个Service的启动流程我这边也不细说，这边就说一下ActivityThread.java里面handleCreateService方法的调用过程，该方法代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/core/java/android/app/ActivityThread.java</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleCreateService</span><span class="params">(CreateServiceData data)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// If we are getting ready to gc after going to the background, well</span></span><br><span class="line">    <span class="comment">// we are back active so skip it.</span></span><br><span class="line">    unscheduleGcIdler</span><br><span class="line">    LoadedApk packageInfo = getPackageInfoNoCheck(</span><br><span class="line">            data.info.applicationInfo, data.compatInfo);</span><br><span class="line">    Service service = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 这边通过类加载器去创建了需要启动的Service的实例(我们这里实际上就是SystemUIService的实例了)</span></span><br><span class="line">        java.lang.ClassLoader cl = packageInfo.getClassLoader();</span><br><span class="line">        service = (Service) cl.loadClass(data.info.name).newInstance();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!mInstrumentation.onException(service, e)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</span><br><span class="line">                <span class="string">&quot;Unable to instantiate service &quot;</span> + data.info.name</span><br><span class="line">                + <span class="string">&quot;: &quot;</span> + e.toString(), e);</span><br><span class="line">        &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (localLOGV) Slog.v(TAG, <span class="string">&quot;Creating service &quot;</span> + data.info.name)				</span><br><span class="line">        <span class="comment">// 创建Context</span></span><br><span class="line">        ContextImpl context = ContextImpl.createAppContext(<span class="keyword">this</span>, packageInfo);</span><br><span class="line">        context.setOuterContext(service)				</span><br><span class="line">        <span class="comment">// 创建Application</span></span><br><span class="line">        Application app = packageInfo.makeApplication(<span class="keyword">false</span>, mInstrumentation);</span><br><span class="line">        service.attach(context, <span class="keyword">this</span>, data.info.name, data.token, app,</span><br><span class="line">                ActivityManager.getService());</span><br><span class="line">        <span class="comment">// 调用service的onCreate()方法</span></span><br><span class="line">        service.onCreate();</span><br><span class="line">        mServices.put(data.token, service);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ActivityManager.getService().serviceDoneExecuting(</span><br><span class="line">                    data.token, SERVICE_DONE_EXECUTING_ANON, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> e.rethrowFromSystemServer();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!mInstrumentation.onException(service, e)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</span><br><span class="line">                <span class="string">&quot;Unable to create service &quot;</span> + data.info.name</span><br><span class="line">                + <span class="string">&quot;: &quot;</span> + e.toString(), e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这边可以看到第10行的注释有说明，先创建了Service的实例，然后创建Application，最后调用了Service的onCreate()方法， 我们再看看makeApplication方法里面做了哪些操作，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/core/java/android/app/LoadedApk.java</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Application <span class="title">makeApplication</span><span class="params">(<span class="keyword">boolean</span> forceDefaultAppClass,</span></span></span><br><span class="line"><span class="function"><span class="params">            Instrumentation instrumentation)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// mApplication不为空直接return，第一次启动时mApplication为空</span></span><br><span class="line">    <span class="keyword">if</span> (mApplication != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> mApplication;</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">if</span> (instrumentation != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 调用Application的onCreate()方法</span></span><br><span class="line">            instrumentation.callApplicationOnCreate(app);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!instrumentation.onException(app, e)) &#123;</span><br><span class="line">                Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</span><br><span class="line">                    <span class="string">&quot;Unable to create application &quot;</span> + app.getClass().getName()</span><br><span class="line">                    + <span class="string">&quot;: &quot;</span> + e.toString(), e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">return</span> app;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// frameworks/base/core/java/android/app/Instrumentation.java</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">callApplicationOnCreate</span><span class="params">(Application app)</span> </span>&#123;</span><br><span class="line">		app.onCreate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这边再来整理一下实际的顺序：</p>
-<ol>
-<li>创建Service实例；</li>
-<li>创建Application实例；</li>
-<li>调用Application的onCreate()方法；</li>
-<li>调用Service的onCreate()方法；</li>
-</ol>
-<p>当启动SystemUIService时候就是这样的一个流程，因为SystemUI是第一次启动，所以Application是为空的，所以流程就是上述的流程。</p>
-<p>下面就来看看SystemUI的Application的onCreate()方法</p>
-<h3 id="2-3-SystemUIApplication-onCreate"><a href="#2-3-SystemUIApplication-onCreate" class="headerlink" title="2.3 SystemUIApplication.onCreate()"></a>2.3 SystemUIApplication.onCreate()</h3><p>话不多说，直接上代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/packages/SystemUI/src/com/android/systemui/SystemUIApplication.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemUIApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> <span class="keyword">implements</span> <span class="title">SysUiServiceProvider</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">private</span> SystemUI[] mServices;</span><br><span class="line">    ......</span><br><span class="line">      </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        ......</span><br><span class="line">        setTheme(R.style.Theme_SystemUI);</span><br><span class="line">        <span class="comment">// 初始化SystemUIFactory</span></span><br><span class="line">        SystemUIFactory.createFromConfig(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 判断是否是系统用户</span></span><br><span class="line">        <span class="keyword">if</span> (Process.myUserHandle().equals(UserHandle.SYSTEM)) &#123;</span><br><span class="line">            IntentFilter bootCompletedFilter = <span class="keyword">new</span> IntentFilter(Intent.ACTION_BOOT_COMPLETED);</span><br><span class="line">            bootCompletedFilter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);</span><br><span class="line">            <span class="comment">// 注册ACTION_BOOT_COMPLETED广播</span></span><br><span class="line">            registerReceiver(<span class="keyword">new</span> BroadcastReceiver() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (mBootCompleted) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> (DEBUG) Log.v(TAG, <span class="string">&quot;BOOT_COMPLETED received&quot;</span>);</span><br><span class="line">                    unregisterReceiver(<span class="keyword">this</span>);</span><br><span class="line">                    mBootCompleted = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">if</span> (mServicesStarted) &#123;</span><br><span class="line">                        <span class="keyword">final</span> <span class="keyword">int</span> N = mServices.length;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">                            mServices[i].onBootCompleted();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, bootCompletedFilter);</span><br><span class="line">            <span class="comment">// 注册ACTION_LOCALE_CHANGED广播</span></span><br><span class="line">            IntentFilter localeChangedFilter = <span class="keyword">new</span> IntentFilter(Intent.ACTION_LOCALE_CHANGED);</span><br><span class="line">            registerReceiver(<span class="keyword">new</span> BroadcastReceiver() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (Intent.ACTION_LOCALE_CHANGED.equals(intent.getAction())) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (!mBootCompleted) <span class="keyword">return</span>;</span><br><span class="line">                        <span class="comment">// Update names of SystemUi notification channels</span></span><br><span class="line">                        NotificationChannels.createAll(context);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, localeChangedFilter);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            String processName = ActivityThread.currentProcessName();</span><br><span class="line">            ApplicationInfo info = getApplicationInfo();</span><br><span class="line">            <span class="keyword">if</span> (processName != <span class="keyword">null</span> &amp;&amp; processName.startsWith(info.processName + <span class="string">&quot;:&quot;</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            startSecondaryUserServicesIfNeeded();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过上述代码，可以看到，对用户进行了判断：</p>
-<ul>
-<li>系统用户：<ul>
-<li>注册ACTION_BOOT_COMPLETED广播，接收到消息后立即解除注册，然后调用mServices的onBootCompleted方法，这里的mServices是一个SystemUI对象的数组，里面存放的各个子service的实例。</li>
-<li>注册ACTION_LOCALE_CHANGED广播，接收到消息后，去创建<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/notifiers/notifications#ManageChannels">通知渠道</a>，这是Android 8.0才出来的新功能，这个在本篇就不过多讲解，有兴趣的小伙伴可以点击链接查看Google的讲解。</li>
-</ul>
-</li>
-<li>非系统用户：在SystemUI的某些子任务中，不需要去启动serivces，例如screenshots, sweetsweetdesserts or tuner 。</li>
-</ul>
-<p>接着来我们看看SystemUIService的onCreate()方法</p>
-<h3 id="2-4-SystemUIService-onCreate"><a href="#2-4-SystemUIService-onCreate" class="headerlink" title="2.4 SystemUIService.onCreate()"></a>2.4 SystemUIService.onCreate()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/packages/SystemUI/src/com/android/systemui/SystemUIService.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemUIService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        ((SystemUIApplication) getApplication()).startServicesIfNeeded();</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以看到调用了SystemUIApplication的startServicesIfNeeded方法，我们接着往下看</p>
-<h3 id="2-5-SystemUIApplication-startServicesIfNeeded"><a href="#2-5-SystemUIApplication-startServicesIfNeeded" class="headerlink" title="2.5 SystemUIApplication.startServicesIfNeeded()"></a>2.5 SystemUIApplication.startServicesIfNeeded()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/packages/SystemUI/src/com/android/systemui/SystemUIApplication.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemUIApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> <span class="keyword">implements</span> <span class="title">SysUiServiceProvider</span> </span>&#123;</span><br><span class="line">    ......</span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startServicesIfNeeded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String[] names = getResources().getStringArray(R.array.config_systemUIServiceComponents);</span><br><span class="line">        startServicesIfNeeded(names);</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看看资源文件里面到底是何方神圣</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- SystemUI Services: The classes of the stuff to start. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string-array</span> <span class="attr">name</span>=<span class="string">&quot;config_systemUIServiceComponents&quot;</span> <span class="attr">translatable</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.Dependency<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.util.NotificationChannels<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.statusbar.CommandQueue$CommandQueueStart<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.keyguard.KeyguardViewMediator<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.recents.Recents<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.volume.VolumeUI<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.stackdivider.Divider<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.usb.StorageNotification<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.power.PowerUI<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.media.RingtonePlayer<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.keyboard.KeyboardUI<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.pip.PipUI<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.shortcut.ShortcutKeyDispatcher<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>@string/config_systemUIVendorServiceComponent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.util.leak.GarbageMonitor$Service<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.LatencyTester<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.globalactions.GlobalActionsComponent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.ScreenDecorations<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.fingerprint.FingerprintDialogImpl<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span>com.android.systemui.SliceBroadcastRelayHandler<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">string-array</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>可以看到，里面对应的都是SystemUI里面的类名，都是需要启动的子服务</p>
-<p>查看了一下，这里面的每个组件类，全都是SystemUI的子类</p>
-<p>接下来看看SystemUI</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemUI</span> <span class="keyword">implements</span> <span class="title">SysUiServiceProvider</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Context mContext;</span><br><span class="line">    <span class="keyword">public</span> Map&lt;Class&lt;?&gt;, Object&gt; mComponents;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onConfigurationChanged</span><span class="params">(Configuration newConfig)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dump</span><span class="params">(FileDescriptor fd, PrintWriter pw, String[] args)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onBootCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">getComponent</span><span class="params">(Class&lt;T&gt; interfaceType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (T) (mComponents != <span class="keyword">null</span> ? mComponents.get(interfaceType) : <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> &lt;T, C extends T&gt; <span class="function"><span class="keyword">void</span> <span class="title">putComponent</span><span class="params">(Class&lt;T&gt; interfaceType, C component)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mComponents != <span class="keyword">null</span>) &#123;</span><br><span class="line">            mComponents.put(interfaceType, component);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">overrideNotificationAppName</span><span class="params">(Context context, Notification.Builder n,</span></span></span><br><span class="line"><span class="function"><span class="params">            <span class="keyword">boolean</span> system)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Bundle extras = <span class="keyword">new</span> Bundle();</span><br><span class="line">        String appName = system</span><br><span class="line">                ? context.getString(com.android.internal.R.string.notification_app_name_system)</span><br><span class="line">                : context.getString(com.android.internal.R.string.notification_app_name_settings);</span><br><span class="line">        extras.putString(Notification.EXTRA_SUBSTITUTE_APP_NAME, appName);</span><br><span class="line"></span><br><span class="line">        n.addExtras(extras);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们需要注意的是，这里使用了模板模式。</p>
-<p>SystemUI是一个基类，其中定义了4个抽象或空方法，作为模板指定了子类的行为模式。资源文件中定义的众多子服务类都是SystemUI的子类，既然都继承自SystemUI类，那么这些子类就有一些共同的行为模式，在某些阶段应该有什么表现，只是具体如何表现因不同子类而异。与我们经常用到的AsyncTask是类似的。</p>
-<p>接着startServicesIfNeeded(names)来看</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/packages/SystemUI/src/com/android/systemui/SystemUIApplication.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemUIApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> <span class="keyword">implements</span> <span class="title">SysUiServiceProvider</span> </span>&#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startServicesIfNeeded</span><span class="params">(String[] services)</span> </span>&#123;</span><br><span class="line">        ......</span><br><span class="line">        mServices = <span class="keyword">new</span> SystemUI[services.length];</span><br><span class="line">        ......</span><br><span class="line">				</span><br><span class="line">        log.traceBegin(<span class="string">&quot;StartServices&quot;</span>);</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> N = services.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">            String clsName = services[i];</span><br><span class="line">            <span class="keyword">if</span> (DEBUG) Log.d(TAG, <span class="string">&quot;loading: &quot;</span> + clsName);</span><br><span class="line">            log.traceBegin(<span class="string">&quot;StartServices&quot;</span> + clsName);</span><br><span class="line">            <span class="keyword">long</span> ti = System.currentTimeMillis();</span><br><span class="line">            Class cls;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                cls = Class.forName(clsName);</span><br><span class="line">                mServices[i] = (SystemUI) cls.newInstance();</span><br><span class="line">            &#125; <span class="keyword">catch</span>(ClassNotFoundException ex)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(ex);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IllegalAccessException ex) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(ex);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InstantiationException ex) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(ex);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            mServices[i].mContext = <span class="keyword">this</span>;</span><br><span class="line">            mServices[i].mComponents = mComponents;</span><br><span class="line">            <span class="keyword">if</span> (DEBUG) Log.d(TAG, <span class="string">&quot;running: &quot;</span> + mServices[i]);</span><br><span class="line">            mServices[i].start();</span><br><span class="line">            log.traceEnd();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Warn if initialization of component takes too long</span></span><br><span class="line">            ti = System.currentTimeMillis() - ti;</span><br><span class="line">            <span class="keyword">if</span> (ti &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">                Log.w(TAG, <span class="string">&quot;Initialization of &quot;</span> + cls.getName() + <span class="string">&quot; took &quot;</span> + ti + <span class="string">&quot; ms&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mBootCompleted) &#123;</span><br><span class="line">                mServices[i].onBootCompleted();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        log.traceEnd();</span><br><span class="line">        ......</span><br><span class="line">        mServicesStarted = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在上述代码中第32行和41行分别规定了SystemUI子类们在启动时要执行start()方法，系统启动后要执行onBootCompleted()方法，所以在这些子类中都重写了这两个方法，到一定的阶段都会以回调的方式执行，但是具体要在这些方法中干什么，子类们自己说了算。这就是典型的模板模式使用，至于具体介绍和使用模板模式，这里不展开讲，大家可以自行查资料。</p>
-<p>可以看到上面这段代码做了一下几步操作：</p>
-<ol>
-<li>实例化SystemUI数组，然后判断系统是否开机完成。</li>
-<li>通过类加载器去循环实例化<code>config_systemUIServiceComponents</code>里面定义的组件，并且赋值给到SystemUI数组。</li>
-<li>然后回调所有子类的start和onBootCompleted方法。</li>
-</ol>
-<h3 id="2-6-小结"><a href="#2-6-小结" class="headerlink" title="2.6 小结"></a>2.6 小结</h3><p>到这里为止，SystemUI的启动流程就介绍完了，这里归纳起来就是执行了如下几个阶段：</p>
-<p>  （1）系统启动就绪后，SystemServer进程下达启动SystemUIService的命令；</p>
-<p>  （2）SystemUI的SystemUiApplication中执行onCreate方法，注册系统启动广播和区域设置更改广播。</p>
-<p>  （3）SystemUI的SystemUIService中执行onCreate方法，启动公共用户的各项服务，各子服务执行onStart()回调方法。</p>
-<p>  （4）系统启动后，第二步注册的广播会接收到系统启动广播，然后各个子服务执行onBootCompleted()回调方法。</p>
-<p>下面就开始讲讲VolumeUI的初始化，VolumeUI是SystemUI里面的一个子服务，用来控制音量条的。</p>
-<h2 id="3-VolumeUI初始化"><a href="#3-VolumeUI初始化" class="headerlink" title="3.VolumeUI初始化"></a>3.VolumeUI初始化</h2><h3 id="3-1-VolumeUI-start"><a href="#3-1-VolumeUI-start" class="headerlink" title="3.1 VolumeUI.start()"></a>3.1 VolumeUI.start()</h3><p>按照之前代码流程，最开始走onStart()方法，接下来看相关代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/packages/SystemUI/src/com/android/systemui/volume/VolumeUI.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VolumeUI</span> <span class="keyword">extends</span> <span class="title">SystemUI</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">&quot;VolumeUI&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> LOGD = Log.isLoggable(TAG, Log.DEBUG);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Handler mHandler = <span class="keyword">new</span> Handler();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> mEnabled;</span><br><span class="line">    <span class="keyword">private</span> VolumeDialogComponent mVolumeComponent;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 是否启用音量条，是否启用安全音量警告。</span></span><br><span class="line">        <span class="keyword">boolean</span> enableVolumeUi = mContext.getResources().getBoolean(R.bool.enable_volume_ui);</span><br><span class="line">        <span class="keyword">boolean</span> enableSafetyWarning =</span><br><span class="line">            mContext.getResources().getBoolean(R.bool.enable_safety_warning);</span><br><span class="line">        mEnabled = enableVolumeUi || enableSafetyWarning;</span><br><span class="line">        <span class="keyword">if</span> (!mEnabled) <span class="keyword">return</span>;</span><br><span class="line">        mVolumeComponent = <span class="keyword">new</span> VolumeDialogComponent(<span class="keyword">this</span>, mContext, <span class="keyword">null</span>);</span><br><span class="line">        mVolumeComponent.setEnableDialogs(enableVolumeUi, enableSafetyWarning);</span><br><span class="line">        putComponent(VolumeComponent.class, getVolumeComponent());</span><br><span class="line">        setDefaultVolumeController();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> VolumeComponent <span class="title">getVolumeComponent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mVolumeComponent;</span><br><span class="line">    &#125;</span><br><span class="line">		</span><br><span class="line">    ......</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setDefaultVolumeController</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        DndTile.setVisible(mContext, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">if</span> (LOGD) Log.d(TAG, <span class="string">&quot;Registering default volume controller&quot;</span>);</span><br><span class="line">        getVolumeComponent().register();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在onStart()方法中，先是判断是否启动了音量条和是否启用安全音量警告，如果两个有一个为false，那么接下来的代码就不会执行了。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- frameworks/base/packages/SystemUI/res/values/config.xml --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Enable the default volume dialog --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bool</span> <span class="attr">name</span>=<span class="string">&quot;enable_volume_ui&quot;</span>&gt;</span>true<span class="tag">&lt;/<span class="name">bool</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Enable the default volume level warning dialog --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bool</span> <span class="attr">name</span>=<span class="string">&quot;enable_safety_warning&quot;</span>&gt;</span>true<span class="tag">&lt;/<span class="name">bool</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>接下来看看<code>mVolumeComponent = new VolumeDialogComponent(this, mContext, null);</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/packages/SystemUI/src/com/android/systemui/volume/VolumeDialogComponent.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VolumeDialogComponent</span> <span class="keyword">implements</span> <span class="title">VolumeComponent</span>, <span class="title">TunerService</span>.<span class="title">Tunable</span>,</span></span><br><span class="line"><span class="class">        <span class="title">VolumeDialogControllerImpl</span>.<span class="title">UserActivityListener</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String VOLUME_DOWN_SILENT = <span class="string">&quot;sysui_volume_down_silent&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String VOLUME_UP_SILENT = <span class="string">&quot;sysui_volume_up_silent&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String VOLUME_SILENT_DO_NOT_DISTURB = <span class="string">&quot;sysui_do_not_disturb&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> DEFAULT_VOLUME_DOWN_TO_ENTER_SILENT = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> DEFAULT_VOLUME_UP_TO_EXIT_SILENT = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> DEFAULT_DO_NOT_DISTURB_WHEN_SILENT = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> SystemUI mSysui;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Context mContext;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> VolumeDialogControllerImpl mController;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> InterestingConfigChanges mConfigChanges = <span class="keyword">new</span> InterestingConfigChanges(</span><br><span class="line">            ActivityInfo.CONFIG_FONT_SCALE | ActivityInfo.CONFIG_LOCALE</span><br><span class="line">            | ActivityInfo.CONFIG_ASSETS_PATHS);</span><br><span class="line">    <span class="keyword">private</span> VolumeDialog mDialog;</span><br><span class="line">    <span class="keyword">private</span> VolumePolicy mVolumePolicy = <span class="keyword">new</span> VolumePolicy(</span><br><span class="line">            DEFAULT_VOLUME_DOWN_TO_ENTER_SILENT,  <span class="comment">// volumeDownToEnterSilent</span></span><br><span class="line">            DEFAULT_VOLUME_UP_TO_EXIT_SILENT,  <span class="comment">// volumeUpToExitSilent</span></span><br><span class="line">            DEFAULT_DO_NOT_DISTURB_WHEN_SILENT,  <span class="comment">// doNotDisturbWhenSilent</span></span><br><span class="line">            <span class="number">400</span>    <span class="comment">// vibrateToSilentDebounce</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">VolumeDialogComponent</span><span class="params">(SystemUI sysui, Context context, Handler handler)</span> </span>&#123;</span><br><span class="line">        mSysui = sysui;</span><br><span class="line">        mContext = context;</span><br><span class="line">        mController = (VolumeDialogControllerImpl) Dependency.get(VolumeDialogController.class);</span><br><span class="line">        mController.setUserActivityListener(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// Allow plugins to reference the VolumeDialogController.</span></span><br><span class="line">        Dependency.get(PluginDependencyProvider.class)</span><br><span class="line">                .allowPluginDependency(VolumeDialogController.class);</span><br><span class="line">        Dependency.get(ExtensionController.class).newExtension(VolumeDialog.class)</span><br><span class="line">                .withPlugin(VolumeDialog.class)</span><br><span class="line">                .withDefault(<span class="keyword">this</span>::createDefault)</span><br><span class="line">                .withFeature(PackageManager.FEATURE_AUTOMOTIVE, <span class="keyword">this</span>::createCarDefault)</span><br><span class="line">                .withCallback(dialog -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (mDialog != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        mDialog.destroy();</span><br><span class="line">                    &#125;</span><br><span class="line">                    mDialog = dialog;</span><br><span class="line">                    mDialog.init(LayoutParams.TYPE_VOLUME_OVERLAY, mVolumeDialogCallback);</span><br><span class="line">                &#125;).build();</span><br><span class="line">        applyConfiguration();</span><br><span class="line">        Dependency.get(TunerService.class).addTunable(<span class="keyword">this</span>, VOLUME_DOWN_SILENT, VOLUME_UP_SILENT,</span><br><span class="line">                VOLUME_SILENT_DO_NOT_DISTURB);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> VolumeDialog <span class="title">createDefault</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        VolumeDialogImpl impl = <span class="keyword">new</span> VolumeDialogImpl(mContext);</span><br><span class="line">        impl.setStreamImportant(AudioManager.STREAM_SYSTEM, <span class="keyword">false</span>);</span><br><span class="line">        impl.setAutomute(<span class="keyword">true</span>);</span><br><span class="line">        impl.setSilentMode(<span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> impl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> VolumeDialog <span class="title">createCarDefault</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CarVolumeDialogImpl(mContext);</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://chen849343227.github.io/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/" data-id="ckmenyp120001o5t3e0lv9xu5" data-title="Android音量调节（二）音量处理及UI刷新" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/03/18/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/03/Android%E9%9F%B3%E9%87%8F%E8%B0%83%E8%8A%82%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9F%B3%E9%87%8F%E5%A4%84%E7%90%86%E5%8F%8AUI%E5%88%B7%E6%96%B0/">Android音量调节（二）音量处理及UI刷新</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
