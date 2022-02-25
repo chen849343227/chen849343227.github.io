@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>如何正确的关闭MappedByteBuffer | Alone's blog</title><meta name="keywords" content="分享并坚持"><meta name="author" content="Alone"><meta name="copyright" content="Alone"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近遇到了一个很奇怪的问题，使用多媒体应用查看U盘里面的txt文本时，拔掉U盘之后，应用会退出当前界面，这个是正常现象，但是又过了几秒钟之后，应用直接自动退出了。这个就是异常的了。 查找问题首先，我们不知道问题出在哪里，所以我们直接在串口抓logcat，发现了有用的信息，打印如下： 1212-01 06:32:59.548  2550  2571 W vold    : Found map &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何正确的关闭MappedByteBuffer">
+<meta property="og:url" content="https://chen849343227.github.io/2021/11/29/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%85%B3%E9%97%ADMappedByteBuffer/index.html">
+<meta property="og:site_name" content="Alone&#39;s blog">
+<meta property="og:description" content="最近遇到了一个很奇怪的问题，使用多媒体应用查看U盘里面的txt文本时，拔掉U盘之后，应用会退出当前界面，这个是正常现象，但是又过了几秒钟之后，应用直接自动退出了。这个就是异常的了。 查找问题首先，我们不知道问题出在哪里，所以我们直接在串口抓logcat，发现了有用的信息，打印如下： 1212-01 06:32:59.548  2550  2571 W vold    : Found map &amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://up.36992.com/pic/e6/c5/51/e6c551e768092c8655292d89a4034a74.jpg">
+<meta property="article:published_time" content="2021-11-29T09:14:32.433Z">
+<meta property="article:modified_time" content="2021-12-01T03:46:14.989Z">
+<meta property="article:author" content="Alone">
+<meta property="article:tag" content="分享并坚持">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://up.36992.com/pic/e6/c5/51/e6c551e768092c8655292d89a4034a74.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chen849343227.github.io/2021/11/29/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%85%B3%E9%97%ADMappedByteBuffer/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2021-12-01 11:46:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?0a30f83071e88ef0a2d3be2e5b647282"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/head.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/systems/"><i class="fa-fw fas fa-system"></i><span> 体系</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://up.36992.com/pic/e6/c5/51/e6c551e768092c8655292d89a4034a74.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Alone's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/systems/"><i class="fa-fw fas fa-system"></i><span> 体系</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">如何正确的关闭MappedByteBuffer</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-29T09:14:32.433Z" title="发表于 2021-11-29 17:14:32">2021-11-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-01T03:46:14.989Z" title="更新于 2021-12-01 11:46:14">2021-12-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="如何正确的关闭MappedByteBuffer"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><span id="more"></span>
+
+<p>最近遇到了一个很奇怪的问题，使用多媒体应用查看U盘里面的txt文本时，拔掉U盘之后，应用会退出当前界面，这个是正常现象，但是又过了几秒钟之后，应用直接自动退出了。这个就是异常的了。</p>
+<h2 id="查找问题"><a href="#查找问题" class="headerlink" title="查找问题"></a>查找问题</h2><p>首先，我们不知道问题出在哪里，所以我们直接在串口抓logcat，发现了有用的信息，打印如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12-01 06:32:59.548  2550  2571 W vold    : Found map &#x2F;proc&#x2F;4450&#x2F;maps referencing &#x2F;mnt&#x2F;media_rw&#x2F;5A34EDBD34ED9BEF&#x2F;google.txt</span><br><span class="line">12-01 06:32:59.708  2550  2571 W vold    : Sending Interrupt to 4450</span><br></pre></td></tr></table></figure>
+
+<p>可以看到我们查看的txt文本在进程中还存留引用，我们拔出U盘的时候，vold进程会在后台查询还存在引用的进程，然后vold进程会将其杀掉。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// system/vold/Process.cpp</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KillProcessesWithOpenFiles</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; prefix, <span class="keyword">int</span> signal)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">unordered_set</span>&lt;<span class="keyword">pid_t</span>&gt; pids;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> proc_d = <span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;DIR, <span class="keyword">int</span> (*)(DIR*)&gt;(opendir(<span class="string">&quot;/proc&quot;</span>), closedir);</span><br><span class="line">    <span class="keyword">if</span> (!proc_d) &#123;</span><br><span class="line">        PLOG(ERROR) &lt;&lt; <span class="string">&quot;Failed to open proc&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span>* <span class="title">proc_de</span>;</span></span><br><span class="line">    <span class="keyword">while</span> ((proc_de = readdir(proc_d.get())) != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="comment">// We only care about valid PIDs</span></span><br><span class="line">        <span class="keyword">pid_t</span> pid;</span><br><span class="line">        <span class="keyword">if</span> (proc_de-&gt;d_type != DT_DIR) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (!android::base::ParseInt(proc_de-&gt;d_name, &amp;pid)) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Look for references to prefix</span></span><br><span class="line">        <span class="keyword">bool</span> found = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">auto</span> path = StringPrintf(<span class="string">&quot;/proc/%d&quot;</span>, pid);</span><br><span class="line">        found |= checkMaps(path + <span class="string">&quot;/maps&quot;</span>, prefix);</span><br><span class="line">        found |= checkSymlink(path + <span class="string">&quot;/cwd&quot;</span>, prefix);</span><br><span class="line">        found |= checkSymlink(path + <span class="string">&quot;/root&quot;</span>, prefix);</span><br><span class="line">        found |= checkSymlink(path + <span class="string">&quot;/exe&quot;</span>, prefix);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> fd_path = path + <span class="string">&quot;/fd&quot;</span>;</span><br><span class="line">        <span class="keyword">auto</span> fd_d = <span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;DIR, <span class="keyword">int</span> (*)(DIR*)&gt;(opendir(fd_path.c_str()), closedir);</span><br><span class="line">        <span class="keyword">if</span> (!fd_d) &#123;</span><br><span class="line">            PLOG(WARNING) &lt;&lt; <span class="string">&quot;Failed to open &quot;</span> &lt;&lt; fd_path;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            struct dirent* fd_de;</span><br><span class="line">            <span class="keyword">while</span> ((fd_de = readdir(fd_d.get())) != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (fd_de-&gt;d_type != DT_LNK) <span class="keyword">continue</span>;</span><br><span class="line">                found |= checkSymlink(fd_path + <span class="string">&quot;/&quot;</span> + fd_de-&gt;d_name, prefix);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (found) &#123;</span><br><span class="line">            pids.insert(pid);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (signal != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pid : pids) &#123;</span><br><span class="line">            LOG(WARNING) &lt;&lt; <span class="string">&quot;Sending &quot;</span> &lt;&lt; strsignal(signal) &lt;&lt; <span class="string">&quot; to &quot;</span> &lt;&lt; pid;</span><br><span class="line">            <span class="comment">// kill</span></span><br><span class="line">            kill(pid, signal);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pids.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到如果有发现，最后会调用kill将某些进程杀掉。</p>
+<h2 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h2><p>通过打印发现，可能是应用程序并没有将某些流完全关闭，导致还存留着引用，于是去查看了一番代码，发现所有的流都关闭了，只剩<code>MappedByteBuffer</code>这个没有关闭，因为这个类没有<code>close</code>方法。于是去网上查了一翻，发现很有可能是这个没有正确关闭导致的。</p>
+<p>然后在网上查询了一下ByteBuffer相关的资料：</p>
+<p>要在内存映射文件中进行写入和读取，我们从 a 开始<code>RandomAccessFile</code>，获取该文件的通道。内存映射字节缓冲区是通过该<code>FileChannel.map()</code>方法创建的。此类<code>ByteBuffer</code>使用特定于内存映射文件区域的操作扩展了该类。</p>
+<p>映射的字节缓冲区及其表示的文件映射在缓冲区本身被垃圾收集之前一直有效。所以我们需要在释放资源的时候，同时将映射的字节缓冲区也清除掉才行。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>MappedByteBuffer是一个抽象类，实际子类是DirectByteBuffer，而DirectByteBuffer持有Cleaner的引用，我们需要调用Cleaner的clean方法，所以代码如下：</p>
+<p>该代码适用于java9之前：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clean</span><span class="params">(<span class="keyword">final</span> ByteBuffer buffer)</span> </span>&#123;</span><br><span class="line">    AccessController.doPrivileged((PrivilegedAction&lt;Object&gt;) () -&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Field field = buffer.getClass().getDeclaredField(<span class="string">&quot;cleaner&quot;</span>);</span><br><span class="line">            field.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            Object cleaner = field.get(buffer);</span><br><span class="line"></span><br><span class="line">            Method cleanerMethod = cleaner.getClass().getMethod(<span class="string">&quot;clean&quot;</span>);</span><br><span class="line">            cleanerMethod.invoke(cleaner);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果是java9+，可以使用如下方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MappedByteBuffer buffer = ...</span><br><span class="line"></span><br><span class="line"><span class="comment">// Java 9+ only:</span></span><br><span class="line">Class&lt;?&gt; unsafeClass = Class.forName(<span class="string">&quot;sun.misc.Unsafe&quot;</span>);</span><br><span class="line">Field unsafeField = unsafeClass.getDeclaredField(<span class="string">&quot;theUnsafe&quot;</span>);</span><br><span class="line">unsafeField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">Object unsafe = unsafeField.get(<span class="keyword">null</span>);</span><br><span class="line">Method invokeCleaner = unsafeClass.getMethod(<span class="string">&quot;invokeCleaner&quot;</span>, ByteBuffer.class);</span><br><span class="line">invokeCleaner.invoke(unsafe, buffer);</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Alone</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chen849343227.github.io/2021/11/29/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%85%B3%E9%97%ADMappedByteBuffer/">https://chen849343227.github.io/2021/11/29/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%85%B3%E9%97%ADMappedByteBuffer/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chen849343227.github.io" target="_blank">Alone's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="http://up.36992.com/pic/e6/c5/51/e6c551e768092c8655292d89a4034a74.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/frameworks/audio/audio_2.html"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Android音量调节（二）音量处理及UI刷新</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E9%97%AE%E9%A2%98"><span class="toc-text">查找问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0"><span class="toc-text">分析原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Alone</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
